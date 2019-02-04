@@ -1,0 +1,56 @@
+public class Selection { 
+ 
+	public static void sort(int[] xs){ 
+ 
+		int n = xs.length;
+
+		for (int i=0; i<n-1; i++)
+		{
+			int min_index = i;
+			for(int j=i+1; j<n; j++)
+				if (xs[j] < xs[min_index])
+					min_index = j;
+
+				int temp = xs[min_index];
+            xs[min_index] = xs[i];
+            xs[i] = temp;
+		}
+		
+	} 
+
+	public static void printArray(int[] xs){
+		
+		int n = xs.length;
+        for (int i=0; i<n; ++i)
+            System.out.println(xs[i]+" ");
+        System.out.println();
+		
+	}
+
+	public static void main(String[] args) { 
+ 
+		int[] array; 
+		array = new int[]{100,34,72,56,82,67,94}; 
+ 	
+ 		printArray(array);
+		sort(array); 
+ 		printArray(array);
+ 
+		array = new int[]{1,2,2,1,2,2,1,0}; 
+ 		printArray(array);
+		sort(array); 
+ 		printArray(array);
+
+		array = new int[]{1}; 
+ 		printArray(array);
+		sort(array); 
+ 		printArray(array);
+
+		array = new int[]{}; 
+ 		printArray(array);
+		sort(array); 
+ 		printArray(array);
+
+	} 
+ 
+}
